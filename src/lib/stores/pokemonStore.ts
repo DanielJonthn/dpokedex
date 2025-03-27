@@ -4,6 +4,7 @@ import { fetchPokemonTypes } from "$lib/api/pokemon";
 import { loadPokemonSpecies, type Generation } from "$lib/types/generations";
 
 export const pokemonTypes = writable<PokemonTypeCategory[]>([]);
+export const generationsStore = writable<Generation[]>([]);
 
 export const filterStore = writable({
   searchQuery: "",
@@ -11,8 +12,6 @@ export const filterStore = writable({
   selectedTypes: [] as string[],
   showTypeFilter: false,
 });
-
-export const generationsStore = writable<Generation[]>([]);
 
 export async function initializeStores() {
   const types = await fetchPokemonTypes();

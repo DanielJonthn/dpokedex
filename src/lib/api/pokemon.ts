@@ -22,10 +22,16 @@ async function fetchWithCache(url: string) {
   return data;
 }
 
-export async function fetchPokemon(limit = 1510): Promise<IndexPokemon[]> {
+export async function fetchPokemon(limit = 151): Promise<IndexPokemon[]> {
   try {
-    const data = await fetchWithCache(
+    const initialData = await fetchWithCache(
       `https://pokeapi.co/api/v2/pokemon?limit=${limit}`
+    );
+
+    const totalPokemon = initialData.count;
+
+    const data = await fetchWithCache(
+      `https://pokeapi.co/api/v2/pokemon?limit=${totalPokemon}`
     );
 
     const pokemonWithDetails = await Promise.all(
@@ -129,6 +135,26 @@ export async function fetchPokemonTypes(): Promise<PokemonTypeCategory[]> {
     return [];
   }
 }
+
+export const fetchAbilityDescription = async (abilityName: string) => {
+  try {
+    const response = await fetch(
+      `https://pokeapi.co/api/v2/ability/${abilityName}`
+    );
+    const data = await response.json();
+    const description =
+      data.effect_entries.find((entry: any) => entry.language.name === "en")
+        ?.short_effect || "No description available.";
+
+    return {
+      name: abilityName.replace("-", " "),
+      description,
+    };
+  } catch (error) {
+    console.error("Failed to fetch ability", error);
+    return null;
+  }
+};
 
 function formatPokemonName(name: string): string {
   return name
