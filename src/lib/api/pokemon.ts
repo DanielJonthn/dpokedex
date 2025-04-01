@@ -116,7 +116,7 @@ export async function fetchPokemonTypes(): Promise<PokemonTypeCategory[]> {
     const data = await fetchWithCache("https://pokeapi.co/api/v2/type/");
 
     const mainTypes = data.results.filter(
-      (type: any) => !["unknown", "shadow"].includes(type.name)
+      (type: any) => !["unknown", "shadow", "stellar"].includes(type.name)
     );
 
     const types = await Promise.all(
