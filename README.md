@@ -1,6 +1,6 @@
 # 🌟 Svelte Pokédex Explorer 🐾
 
-## 📱 Project Overview
+## 📚 Project Overview
 
 A modern, interactive Pokédex built with Svelte and TypeScript, providing a comprehensive exploration of Pokémon across different regions and types.
 
@@ -12,13 +12,13 @@ A modern, interactive Pokédex built with Svelte and TypeScript, providing a com
 - 📊 **Detailed Pokémon View** – Get in-depth information including stats, types, abilities, and moves.
 - 🌙 **Dark Mode** – A sleek interface that adapts to your preferred theme.
 
-## 🚀 Tech Stack
+## 🛠️ Tech Stack
 
 - **Framework**: SvelteKit
 - **Language**: TypeScript
 - **Data Source**: [PokéAPI](https://pokeapi.co/docs/v2)
 
-## 🛠️ Getting Started
+## 📦 Getting Started
 
 ```bash
 # Clone the repository
@@ -32,7 +32,7 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:5173 to view it in the browser.
+Open `http://localhost:5173` to view it in the browser.
 
 ---
 
