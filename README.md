@@ -31,12 +31,6 @@ npm install
 npm run dev
 ```
 
-## 🌐 Deployment
-
-The project will be hosted on **Vercel**.
-
-Live Demo: [Coming Soon!]
-
 ---
 
 **Gotta Catch 'Em All!** 🐾🌟
